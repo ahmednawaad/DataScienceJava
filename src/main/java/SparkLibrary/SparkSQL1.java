@@ -22,8 +22,9 @@ public class SparkSQL1 {
         dataFrameReader.option("header","true");
 
         //read data as dataset
-        Dataset<Row> csvDataFrame = dataFrameReader.csv ("src/main/resources/data_2.csv");
+        Dataset<Row> csvDataFrame = dataFrameReader.csv ("src/main/resources/Wuzzuf_Jobs.csv");
         csvDataFrame.printSchema();
+        csvDataFrame.show();
 
         //// Create view and execute query to convert types as, by default, all columns have string types
         csvDataFrame.createOrReplaceTempView("tempView1");
